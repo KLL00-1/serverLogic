@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      method="POST"
+      action="https://sheetdb.io/api/v1/ouj1wn014t3gv"
+      id="sheetbd-form"
+    >
+      <div class="container">
+        <h1>Good</h1>
+        <input
+          name="data[nickName]"
+          type="text"
+          placeholder="nickName"
+          required
+        />
+        <input
+          name="data[public key]"
+          type="text"
+          placeholder="public key"
+          required
+        />
+        <button type="submit">Send</button>
+      </div>
+    </form>
+    <script>
+      var form = document.getElementById("sheetbd-form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(form.action, {
+          method: "POST",
+          body: new FormData(document.getElementById("sheetbd-form")),
+        })
+          .then((responce) => responce.json())
+          .then((html) => {
+            window.open("https://kll00-1.github.io/js-game/", "_blank");
+          });
+      });
+    </script>
+  </body>
+</html>
